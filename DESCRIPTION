@@ -1,0 +1,5 @@
+Package: extractmarkers
+Type: Package
+Title: Extracts target markers from a VCF, BCF, or PLINK file.
+Version: 0.0.1.0
+RoxygenNote: 7.3.2
