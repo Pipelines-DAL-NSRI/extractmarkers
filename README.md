@@ -30,8 +30,7 @@ extractmarkers(
 
 @param *markerID* (required) asks whether the markers will be extracted by rsID. Set to FALSE if using positions.
 
-@param *snps.list* (required) is a text file containing the list of markers to be extracted. 
-#' If using rsIDs, each line should correspond to one marker. If using POS (positions), there should be 4 columns: [1] chromosome numner (integer), [2] starting base position, [3] final base position, and [4] output file name. 
+@param *snps.list* (required) is a text file containing the list of markers to be extracted. If using rsIDs, each line should correspond to one marker. If using POS (positions), there should be 4 columns: [1] chromosome number (integer), [2] starting base position, [3] final base position, and [4] output file name. 
 
 @param *output* (required) is the user's desired output name.
 
