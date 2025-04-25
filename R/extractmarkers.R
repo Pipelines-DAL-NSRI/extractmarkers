@@ -14,6 +14,8 @@
 #' If using rsIDs, each line should correspond to one marker. If using POS (positions), there should be 4 columns: [1] chromosome numner (integer), [2] starting base position, [3] final base position, and [4] output file name. 
 #' @param output is the user's desired output name. This will only be applied when extracting markers via rsID. 
 #' @param plink.exec (required) takes in the file path for the plink executable. Suggestion is to have plink.exe in the working directory.
+#' @import stringr
+#' @import tools
 #' @examples
 #' extractmarkers(input.file = "mygenotype.vcf", plink.files = FALSE, markerID = TRUE, snps.list = "listsnps.txt", output = "success", plink.exec = "./plink.exe")
 #' @examples extractmarkers(plink.files = TRUE, bed.file = "data.bed", bim.file = "data.bim", fam.file = "data.fam", markerID = FALSE, snps.list = "listsnps.txt", plink.exec = "./softwares/plink.exe")
@@ -29,6 +31,12 @@ extractmarkers <- function(
     snps.list = snps.file, 
     output = output.name,
     plink.exec = plink.path){
+  
+  if(!require("pacman")){
+    install.packages("pacman")
+  }
+  
+  pacman::p_load(stringr, tools, install = TRUE)
   
   plink_exec <- function(PLINKoptions = "") system(paste(plink.exec,PLINKoptions)) #specify path to plink
   
